@@ -1,5 +1,9 @@
 ﻿/* global rnonce, username */
+document.addEventListener("deviceready", onDeviceReady, false);
 
+function motion() {
+    console.log(navigator.accelerometer);
+}
 
 function getnonce() {
     jQuery.ajax({
