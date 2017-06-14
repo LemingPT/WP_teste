@@ -177,7 +177,7 @@ jQuery(document).on("pagebeforecreate", "#contentpage", function(){
 	 
 });
 
-jQuery(document).on("pageinit", "#geolocation", function(){   
+jQuery(document).on("pageinit", "#geolocationpage", function(){   
 
     var watchID = null;
 
