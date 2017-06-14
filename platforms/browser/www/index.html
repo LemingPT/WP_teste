@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <title>PhoneGap App using WordPress</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    
+    <!-- pagina de Inicial Login -->
+        <div data-role="page">
+            <div data-role="header" data-position="fixed">
+                <h1>Login</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <input id="username" type="text" placeholder="Enter Username">
+                <input id="password" type="password" placeholder="Enter Password">
+                <button onclick="login();">Login</button>
+                <a href="#registerpage" data-transition="slideup">Novo Utilizador</a>
+                <button onclick="getnonce();">testar função</button>
+                <br>
+               
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h1>...</h1>
+            </div>
+        </div> 
+
+<!-- Pagina Principal Menu -->     
+        <div data-role="page" id="mainpage">
+            <div data-role="header" data-position="fixed">
+                <h1></h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <ul data-role="listview" id="posts">
+                    
+                </ul>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h1>...</h1>
+            </div>
+        </div> 
+    
+    <!--  pagina de Registo -->        
+        <div data-role="page" id="registerpage">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1  data-inline="true">Novo Registo</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                 <input id="remail" type="text" placeholder="Email">
+                 <input id="rnome" type="text" placeholder="Nome">
+                 <input id="rapelido" type="text" placeholder="Apelido">
+                 <br>
+                 <input id="rusername" type="text" placeholder="Username">
+                 <input id="rpassword" type="password" placeholder="Password">
+                 <button onclick="registar();" data-transition="slideup">Registar</button>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h1>...</h1>
+            </div>
+        </div> 
+        
+    <!--  pagina de Conteudos -->
+        <div data-role="page" id="contentpage">
+            <div data-role="header" data-position="fixed" data-add-back-btn="true">
+                <h1 data-inline="true"> title </h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h1>...</h1>
+            </div>
+        </div> 
+
+        <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    
+</html>
