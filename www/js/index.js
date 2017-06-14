@@ -1,9 +1,7 @@
 ﻿/* global rnonce, username */
 document.addEventListener("deviceready", onDeviceReady, false);
 
-function motion() {
-    console.log(navigator.accelerometer);
-}
+
 
 function getnonce() {
     jQuery.ajax({
@@ -177,4 +175,43 @@ jQuery(document).on("pagebeforecreate", "#contentpage", function(){
 
 		 });
 	 
+});
+
+jQuery(document).on("pageinit", "#geolocation", function(){   
+
+    var watchID = null;
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Get the most accurate position updates available on the
+        // device.
+        var options = { enableHighAccuracy: true };
+        watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+    }
+
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
+                            'Longitude: ' + position.coords.longitude     + '<br />' +
+                            '<hr />'      + element.innerHTML;
+    }
+
+    // clear the watch that was started earlier
+    //
+    function clearWatch() {
+        if (watchID != null) {
+            navigator.geolocation.clearWatch(watchID);
+            watchID = null;
+        }
+    }
+
+        // onError Callback receives a PositionError object
+        //
+        function onError(error) {
+          alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+        }
 });
